@@ -25,18 +25,14 @@ public class LangServlet extends HttpServlet {
     private LangService service;
     private ObjectMapper mapper;
 
-
-    //zaleznosci wynosic do pol
     /**
      * Servlet container needs it.
      * */
-    @SuppressWarnings("unused")
 
-    //konstruktor domyślny bezparemetrowy, pobiera konstruktor z parametrem(domyślna referencyjna interpretacja  serwisu)
     public LangServlet() {
         this(new LangService(), new ObjectMapper());
     }
-    //przekazanie serwisu
+
     LangServlet(LangService service, ObjectMapper mapper) {
         this.service = service;
         this.mapper = mapper;
