@@ -18,11 +18,10 @@ public class App {
 
         var webapp = new WebAppContext();
 
-        //propcesowanie adnostacji
+        // processing the annotation
         webapp.setResourceBase("src/main/webapp");
-        //setContectpath nasze requesty zaczynaja sie od "/"
         webapp.setContextPath("/");
-        //skanowanie adnotacji
+        // annotation scan
         webapp.setConfigurations(new Configuration[] {
                 new AnnotationConfiguration(),
                 new WebInfConfiguration(),

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>ULTIMATE TODO LIST</title>
+
+
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen"  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Yanone+Kaffeesatz:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<form id = "welcomeForm">
+
+
+
+    <div id="container">
+
+        <div id="TO DO LIST">
+           TO DO LIST;)</br>
+        </div>
+
+        <div id="enterTheName">   Enter your name: </div>
+        <div id="barName">
+            <input type="text" class="pure-input-rounded" name="name" placeholder="name">
+        </div>
+
+        <div style="clear: both"></div>
+        <fieldset id="langs">
+
+        </fieldset>
+
+        <div style="clear: both"></div>
+        <div id="button">
+            <button id="btn" class="pure-button pure-button-primary">Submit</button>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</form>
+
+<div id="welcome" style="width: 70%; color: #c041e1; top: 0%; font-size: 40px; margin: 0 auto"></div>
+
+
+<script>
+    (function() {
+        const API_URL = 'http://localhost:8080/api';
+        initWelcomeForm();
+
+        function initWelcomeForm() {
+            const CODE_TO_EMOJI = {
+                'pl': '🇵🇱',
+                'en': '🇺🇸',
+                'de': '🇩🇪',
+                'it': '🇮🇹'
+            };
+            fetch(`${API_URL}/langs`)
+                .then(response => response.json())
+                .then((langArr) => {
+                    const checkboxes = langArr.map(l=>`
+<div id="langus">
+<input type="radio" name="lang" value="${l.id}"> ${CODE_TO_EMOJI[l.code]}
+</div>`).join('\n');
+                    document.getElementById('langs').innerHTML = checkboxes;
+                });
+        }
+
+        initWelcomeFormClick();
+
+        function initWelcomeFormClick() {
+            const form = document.getElementById('welcomeForm');
+            document.getElementById('btn').addEventListener('click', (event) => {
+                event.preventDefault();
+                const formObj = {
+                    name: form.elements.name.value,
+                    lang: form.elements.lang.value
+                };
+                fetch(`${API_URL}?${new URLSearchParams(formObj)}`)
+                    .then(response => response.text())
+                    .then((text) => {
+                        document.getElementById('welcome').innerHTML =  `
+            <h1>${text}</h1>
+        `;
+                        welcomeForm.remove();
+                        document.getElementById('todoForm').style.display = 'block';
+                    });
+            });
+        }
+    })();
+
+</script>
+</body>

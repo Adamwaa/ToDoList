@@ -1,5 +1,6 @@
 package io.github.Adam.Hello;
 
+import io.github.Adam.Lang.LangRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +19,13 @@ public class HelloServlet extends HttpServlet {
     private final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
     private HelloService service;
 
+    /**
+     * Servlet container needs it.
+     * */
+    @SuppressWarnings("unused")
     public HelloServlet() {
-        this(new HelloService());
+        this(new HelloService(new LangRepository()
+        ));
     }
 
     //connection servlet-service
