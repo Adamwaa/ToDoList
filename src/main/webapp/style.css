@@ -1,0 +1,91 @@
+#body
+{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+#todoForm
+{
+
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+
+}
+
+#addTodo
+{
+     color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#todoText
+{
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+#allTodos
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#DeleteButton
+{
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#enterTheName
+{
+    float: left;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 350px;
+    width:150px;
+}
+
+#barName
+{
+    margin-top: 20px;
+    background-color: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+
+
+}
+
+
+#welcome
+{
+
+     font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    color: #c041e1;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+#langs
+{
+    margin-left: 100px;
+    font-size: 60px;
+}
+
+#btn {
+    margin-left: 220px;
+
+    font-size: 45px;
+}
+
+
+
