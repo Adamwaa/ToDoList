@@ -23,4 +23,5 @@ Technologies used in the project:
     
    
 
-![Gif](https://user-images.githubusercontent.com/97319080/174397511-1114b3a5-5362-4325-bce5-0c2c7c0706f1.gif)
+
+![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/97319080/174397760-ece8df2d-16c6-40be-bb02-10187687e19e.gif)
