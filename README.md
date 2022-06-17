@@ -21,5 +21,5 @@ Technologies used in the project:
     
     
     
-    HTTP![2022-06-17_22h11_25_Trim](https://user-images.githubusercontent.com/97319080/174396745-a062b5dd-e791-4e69-8b3c-4eed735a7880.gif)
+    ![](https://user-images.githubusercontent.com/97319080/174396745-a062b5dd-e791-4e69-8b3c-4eed735a7880.gif)
 
